@@ -1,10 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080b16"><meta name="description" content="MIA, tu inteligencia artificial personal.">
-<title>MIA — Tu inteligencia artificial</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b16">
+<title>MIA - Tu inteligencia artificial</title>
 <style>
-:root{color-scheme:dark;--bg:#080b16;--panel:#101629;--line:#273452;--cyan:#58e6f2;--purple:#9b7cff;--muted:#9aa8c5}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -15%,#25315c 0,transparent 48%),var(--bg);color:#f4f7ff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;display:flex;justify-content:center}.app{width:min(100%,760px);min-height:100vh;display:flex;flex-direction:column;padding:22px 18px 18px}header{display:flex;align-items:center;gap:13px;padding:10px 2px 22px;border-bottom:1px solid var(--line)}.logo{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:900;font-size:21px;color:#06121b;background:linear-gradient(135deg,var(--cyan),var(--purple));box-shadow:0 0 28px #58e6f255}h1{font-size:19px;letter-spacing:3px;margin:0}.sub{font-size:12px;color:var(--muted);margin-top:4px}.status{margin-left:auto;font-size:11px;color:var(--cyan);border:1px solid #58e6f255;border-radius:30px;padding:7px 10px}main{flex:1;display:flex;flex-direction:column;align-items:center;padding:48px 0 22px}.orb{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#d7ffff,#58e6f2 22%,#635bd8 62%,#171b42 75%);box-shadow:0 0 35px #58e6f277,0 0 90px #806cff33;position:relative;margin-bottom:25px}.orb:after{content:"";position:absolute;inset:-9px;border:1px solid #70eaff66;border-radius:50%;animation:pulse 3s ease-in-out infinite}.orb span{font-weight:900;font-size:32px;color:#111a37;text-shadow:0 1px 5px #fff}@keyframes pulse{50%{transform:scale(1.09);opacity:.35}}.welcome{text-align:center;margin-bottom:27px}.welcome h2{font-size:clamp(25px,6vw,34px);margin:0 0 9px}.welcome p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}.notice{width:100%;background:#111a2d;border:1px solid var(--line);border-radius:16px;padding:14px 16px;color:#b9c6df;font-size:12px;line-height:1.6;margin-bottom:18px}.notice strong{color:var(--cyan)}.chat{width:100%;display:flex;flex-direction:column;gap:12px}.message{max-width:88%;padding:13px 15px;border-radius:16px;font-size:14px;line-height:1.55;white-space:pre-wrap}.mia{align-self:flex-start;background:var(--panel);border:1px solid var(--line);border-top-left-radius:5px}.you{align-self:flex-end;background:linear-gradient(135deg,#3d4c9b,#6750a8);border-top-right-radius:5px}.composer{display:flex;gap:9px;padding:11px;background:#101629;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 45px #0005}textarea{flex:1;resize:none;min-height:46px;max-height:130px;background:transparent;border:0;outline:0;color:#fff;font:inherit;padding:12px 7px}textarea::placeholder{color:#8391af}button{width:48px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--cyan),#9b7cff);color:#08111f;font-size:20px;font-weight:800;cursor:pointer}button:active{transform:scale(.96)}footer{text-align:center;color:#6f7e9e;font-size:11px;padding:15px 0 2px}@media(min-width:600px){.app{padding:28px 28px 20px}main{padding-top:60px}.orb{width:126px;height:126px}}
-</style></head>
-<body><div class="app"><header><div class="logo">M</div><div><h1>MIA</h1><div class="sub">Tu inteligencia artificial personal</div></div><div class="status">● PROTOTIPO</div></header><main><div class="orb"><span>MIA</span></div><div class="welcome"><h2>Hola, soy MIA</h2><p>Un nuevo espacio para tus ideas.<br>¿Qué te gustaría hacer hoy?</p></div><div class="notice"><strong>Estamos construyendo MIA.</strong> Esta es la primera versión visual. El chat todavía no está conectado a un motor de inteligencia artificial; iremos agregando esa conexión de forma segura.</div><section class="chat" id="chat" aria-live="polite"><div class="message mia">¡Hola! Soy MIA. Ya tengo mi primera interfaz. Puedes escribirme para probar cómo se verá nuestra conversación.</div></section></main><form class="composer" id="form"><textarea id="prompt" rows="1" placeholder="Escribe un mensaje para MIA..." aria-label="Escribe un mensaje"></textarea><button type="submit" aria-label="Enviar">➤</button></form><footer>MIA · Proyecto en construcción</footer></div>
-<script>const form=document.getElementById('form'),input=document.getElementById('prompt'),chat=document.getElementById('chat');form.addEventListener('submit',event=>{event.preventDefault();const value=input.value.trim();if(!value)return;const mine=document.createElement('div');mine.className='message you';mine.textContent=value;chat.appendChild(mine);const reply=document.createElement('div');reply.className='message mia';reply.textContent='¡Recibí tu mensaje! Esta versión es una demostración de la interfaz. En el siguiente paso conectaremos MIA a un servicio de inteligencia artificial.';chat.appendChild(reply);input.value='';chat.scrollIntoView({behavior:'smooth',block:'end'});});</script></body></html>
+:root{--bg:#080b16;--cyan:#62e4ef;--violet:#a78bfa;--text:#edf4ff;--muted:#9aabc5;--border:#2a3b59}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#20325b,#080b16 65%);color:var(--text);font-family:Arial,sans-serif}
+.app{width:min(100%,900px);height:100dvh;margin:auto;padding:12px;display:flex;flex-direction:column;gap:12px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px}
+.brand{display:flex;align-items:center;gap:12px}
+.orb{width:45px;height:45px;border-radius:50%;background:radial-gradient(circle at 30% 25%,white,#62e4ef 25%,#7867ec 65%,#172044);box-shadow:0 0 25px #62e4ef77}
+h1{margin:0;letter-spacing:4px}.subtitle{font-size:11px;color:var(--muted)}.status{color:#61dfb0;font-size:11px}
+main{flex:1;min-height:0;display:flex;flex-direction:column;background:#0e1729ed;border:1px solid var(--border);border-radius:22px;overflow:hidden}
+.welcome{text-align:center;padding:28px 15px}.welcome .orb{margin:0 auto 15px;width:65px;height:65px}.welcome p{color:var(--muted);font-size:13px;line-height:1.6}
+#messages{flex:1;min-height:0;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:90%;padding:13px;border-radius:16px;font-size:14px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.user{align-self:flex-end;background:linear-gradient(135deg,#354d7a,#453b80)}
+.mia{align-self:flex-start;background:#17263e;border:1px solid #2c405f}
+.who{display:block;color:var(--cyan);font-size:10px;margin-bottom:6px;font-weight:bold}
+.resultimg{max-width:100%;max-height:350px;border-radius:12px;margin-top:10px}
+.controls{border-top:1px solid var(--border);padding:12px;background:#0b1424}
+.modes{display:flex;gap:7px;overflow-x:auto;margin-bottom:10px}
+.mode{flex:none;background:#17243a;color:white;border:1px solid var(--border);padding:8px 12px;border-radius:20px;font-size:11px}
+.mode.active{border-color:var(--cyan);color:var(--cyan)}
+.composer{display:flex;align-items:center;gap:6px;padding:6px;background:#111e32;border:1px solid #354866;border-radius:17px}
+button{cursor:pointer}.iconbtn{width:38px;height:38px;flex:none;border:0;border-radius:12px;background:transparent;color:white;font-size:20px}
+textarea{flex:1;min-width:0;min-height:38px;max-height:100px;resize:none;border:0;outline:none;background:transparent;color:white;font-size:14px;padding:9px 4px}
+textarea::placeholder{color:#8294b1}.send{background:linear-gradient(135deg,#62e4ef,#a78bfa);color:#080b16;font-weight:bold}
+#attachments{display:none}.preview{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.filechip{font-size:11px;background:#192944;padding:7px;border-radius:8px}
+.footer{text-align:center;color:#8294b1;font-size:10px;padding:8px}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="orb"></div><div><h1>MIA</h1><div class="subtitle">Tu inteligencia artificial</div></div></div><div class="status" id="status">● Lista</div></header>
+<main>
+<section class="welcome" id="welcome"><div class="orb"></div><h2>Hola, soy MIA</h2><p>Estoy aquí para ayudarte. Puedes conversar conmigo, hacer preguntas, adjuntar imágenes y documentos.</p></section>
+<div id="messages"></div>
+<div class="controls">
+<div class="modes"><button class="mode active" data-mode="chat">Chat</button><button class="mode" data-mode="image">Crear imagen</button><button class="mode" data-mode="ocr">Leer imagen</button></div>
+<div class="preview" id="preview"></div>
+<div class="composer"><button class="iconbtn" id="attach" aria-label="Adjuntar">＋</button><textarea id="prompt" rows="1" placeholder="Escribe tu mensaje..."></textarea><button class="iconbtn" id="mic" aria-label="Micrófono">🎙</button><button class="iconbtn send" id="send" aria-label="Enviar">➤</button></div>
+<div class="footer">MIA · Asistente inteligente</div>
+</div>
+</main>
+<input id="attachments" type="file" accept="image/*,.pdf,.txt" multiple>
+</div>
+<script src="https://js.puter.com/v2/"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+const $=id=>document.getElementById(id),messages=$('messages'),prompt=$('prompt');
+let files=[],mode='chat',history=[];
+const SYSTEM='Eres MIA, una inteligencia artificial amable, cercana e inteligente que habla español colombiano. Responde de forma clara y natural. Ayuda con educación, ciencia, tecnología, cultura y vida cotidiana. En asuntos médicos ofrece información prudente, nunca inventes diagnósticos y recomienda consultar profesionales. No afirmes haber consultado internet si no tienes acceso real a búsqueda web.';
+function setStatus(t){$('status').textContent='● '+t}
+function addMessage(role,text){$('welcome').style.display='none';const d=document.createElement('div');d.className='msg '+role;const w=document.createElement('span');w.className='who';w.textContent=role==='user'?'TÚ':'MIA';d.append(w);const c=document.createElement('span');c.textContent=text;d.append(c);messages.append(d);messages.scrollTop=messages.scrollHeight;return d}
+$('attach').onclick=()=>$('attachments').click();
+$('attachments').onchange=e=>{files=[...files,...e.target.files].slice(0,5);$('preview').innerHTML='';files.forEach(f=>{const c=document.createElement('span');c.className='filechip';c.textContent='📎 '+f.name;$('preview').append(c)});e.target.value=''};
+document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('active',x===b));prompt.placeholder=mode==='image'?'Describe la imagen que quieres crear...':mode==='ocr'?'Adjunta una imagen para leerla...':'Escribe tu mensaje...'});
+async function readPDF(f){if(!window.pdfjsLib)throw Error('No se pudo cargar el lector PDF.');pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';const pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise;let out='';for(let i=1;i<=Math.min(pdf.numPages,10);i++){const p=await pdf.getPage(i),c=await p.getTextContent();out+=c.items.map(x=>x.str).join(' ')+'\n'}return out}
+async function send(){const q=prompt.value.trim(),chosen=[...files];if(!q&&!chosen.length)return;files=[];$('preview').innerHTML='';prompt.value='';addMessage('user',q||'Revisa los archivos adjuntos.');const loading=addMessage('mia','MIA está pensando...');setStatus('Procesando...');
+try{if(!window.puter?.ai)throw Error('El servicio de IA no está disponible.');let extra='',images=[];for(const f of chosen){if(f.type.startsWith('image/'))images.push(f);else if(f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf'))extra+='\nDocumento '+f.name+':\n'+await readPDF(f);else extra+='\nDocumento '+f.name+':\n'+await f.text()}
+let answer='';
+if(mode==='image'){const img=await puter.ai.txt2img(q);loading.textContent='Imagen generada:';loading.append(img);setStatus('Lista');return}
+if(mode==='ocr'){if(!images.length)throw Error('Adjunta una imagen primero.');for(const f of images)answer+=(await puter.ai.img2txt(f))+'\n';if(q)answer+='\n'+q}
+else{let input=SYSTEM+'\n'+(q||'Analiza los archivos adjuntos.')+extra;if(images.length){const urls=await Promise.all(images.map(f=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(f)})));input+='\nSe adjuntaron '+urls.length+' imagen(es).';}const result=await puter.ai.chat(input);answer=result?.message?.content??result?.text??String(result);if(typeof answer!=='string')answer=JSON.stringify(answer)}
+loading.textContent=answer;history.push({question:q,answer});try{localStorage.setItem('mia_history',JSON.stringify(history.slice(-30)))}catch(e){}setStatus('Lista')
+}catch(err){loading.textContent='No pude completar la solicitud: '+err.message;setStatus('Error')}}
+$('send').onclick=send;prompt.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}});
+const Speech=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null;
+if(Speech){recognition=new Speech();recognition.lang='es-CO';recognition.onresult=e=>{prompt.value=e.results[0][0].transcript};recognition.onstart=()=>setStatus('Escuchando...');recognition.onend=()=>setStatus('Lista')}
+$('mic').onclick=()=>{if(!recognition){addMessage('mia','Tu navegador no admite dictado por voz. Prueba Google Chrome.');return}try{recognition.start()}catch(e){setStatus('Micrófono ocupado')}};
+messages.addEventListener('click',e=>{const m=e.target.closest('.mia');if(!m||!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(m.innerText);u.lang='es-CO';speechSynthesis.speak(u)});
+try{history=JSON.parse(localStorage.getItem('mia_history')||'[]')}catch(e){history=[]}
+</script>
+</body>
+</html>
